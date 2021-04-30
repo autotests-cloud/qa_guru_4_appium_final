@@ -58,6 +58,13 @@ task smoke_tests(type: Test) {
     }
 }
 
+task browserstack_android_tests(type: Test) {
+    useJUnitPlatform {
+        includeTags 'browserstack_android'
+    }
+    systemProperty("platform", "browserstack")
+}
+
 task android_tests(type: Test) {
     useJUnitPlatform {
         includeTags 'android'
